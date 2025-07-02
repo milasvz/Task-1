@@ -38,7 +38,7 @@ When('I click the login button', async () => {
 Then(/^I should see a message saying (.*)$/, async (message) =>{
     console.log('Checking alert');
     const alertBoxText = loginPage.alertBox.getText();
-    console.log(`📢 Expected message: "${message}", Actual: "${alertBoxText}"`);
+    console.log(`Expected message: "${message}", Actual: "${alertBoxText}"`);
 
     expect(alertBoxText).toHaveText(expect.stringContaining(message));
 })
@@ -46,7 +46,7 @@ Then(/^I should see a message saying (.*)$/, async (message) =>{
 Then(/^I should see the title (.*) in the dashboard$/, async (title) =>{
     console.log('Checking title of page');
     const actualTitle = await homePage.readTitle();
-    console.log(`📢 Expected title: "${title}", Actual: "${actualTitle}"`);
+    console.log(`Expected title: "${title}", Actual: "${actualTitle}"`);
 
     expect(actualTitle).toBe(title);
 })
